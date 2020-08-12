@@ -4,7 +4,7 @@
 namespace IMU {
     struct Attitude {
         /**
-         * PITCH
+         * PITCH (in radians)
          * Positive angle = tilting forwards
          * Negative angle = tilting backwards
          *
@@ -19,7 +19,7 @@ namespace IMU {
 
 
         /**
-         * YAW
+         * YAW (in radians)
          * Positive angle = turned CW of zero position
          * Negative angle = turned ACW of zero position
          *
@@ -34,7 +34,7 @@ namespace IMU {
         double yaw;
 
         /**
-         * ROLL
+         * ROLL (in radians)
          * Positive angle = tilting to the left
          * Negative angle = tilting to the right
          *

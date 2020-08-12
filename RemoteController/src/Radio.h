@@ -5,8 +5,11 @@
 
 namespace Radio {
     struct AircraftStatus {
-        uint16_t battery;
-        bool goodSignal;
+//        uint16_t battery;
+//        bool goodSignal;
+        unsigned long millis;
+        double error;
+        double output;
     };
 
     struct ControlsStatus {

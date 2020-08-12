@@ -11,6 +11,15 @@ namespace Radio {
         int8_t roll;
     };
 
+    struct AircraftStatus {
+//        uint16_t battery;
+//        bool goodSignal;
+        unsigned long millis;
+        double error;
+        double output;
+    };
+
+    extern AircraftStatus aircraftStatus;
     extern ControlsStatus controls;
 
     void init();

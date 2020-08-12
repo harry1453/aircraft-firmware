@@ -7,23 +7,24 @@ const uint8_t address[6] = "airHP";
 
 namespace Radio {
     namespace { // private
-        struct AircraftStatus {
-            uint16_t battery;
-            bool goodSignal;
-        };
-
         RF24 radio(Hardware::RADIO_CE_PIN, Hardware::RADIO_CS_PIN);
-        AircraftStatus aircraftStatus;
+
+        unsigned long lastReceived;
 
         void tryReceiveControls() {
             radio.writeAckPayload(1, &aircraftStatus, sizeof(AircraftStatus));
             if (radio.available()) {
                 radio.read(&controls, sizeof(ControlsStatus));
-//                controls.throttle = ((int) controls.throttle) * 2000 / 255;
+//                controls.throttle *= 3;
+                lastReceived = millis();
+            }
+            if (millis() - lastReceived >= 1000) {
+                controls.throttle = 0;
             }
         }
     }
 
+    AircraftStatus aircraftStatus;
     ControlsStatus controls;
 
     void init() {
@@ -32,15 +33,15 @@ namespace Radio {
         radio.setAutoAck(true);
         radio.enableAckPayload();
         radio.enableDynamicPayloads();
-        radio.setPALevel(RF24_PA_LOW);
+        radio.setPALevel(RF24_PA_MAX);
         radio.setDataRate(RF24_250KBPS);
         radio.openReadingPipe(1, address);
         radio.startListening();
     }
 
     void loop() {
-        aircraftStatus.goodSignal = radio.testRPD();
-        aircraftStatus.battery = analogRead(Hardware::BATTERY_INPUT_PIN);
+//        aircraftStatus.goodSignal = radio.testRPD();
+//        aircraftStatus.battery = analogRead(Hardware::BATTERY_INPUT_PIN);
         tryReceiveControls();
     }
 }

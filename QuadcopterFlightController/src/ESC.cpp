@@ -18,10 +18,12 @@ namespace ESC {
 
     void setThrottle(uint8_t motor, uint16_t throttle) {
         if (motor >= DShot::ESC_COUNT) return;
-        if (throttle == 0) {
+        if (throttle <= 25) {
             DShot::throttles[motor] = DShot::createPacket(DShot::DSHOT_COMMAND_MOTOR_STOP);
         } else if (throttle <= 2000) {
             DShot::throttles[motor] = DShot::createPacket(throttle+47);
+        } else if (throttle <= 10000) {
+            DShot::throttles[motor] = DShot::createPacket(2047);
         }
     }
 

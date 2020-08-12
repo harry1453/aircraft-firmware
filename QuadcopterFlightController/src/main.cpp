@@ -9,7 +9,7 @@
 
 void setup() {
     Serial.begin(115200);
-    while (!Serial);
+//    while (!Serial);
     Serial.println("Booting...");
     const uint8_t ESC_PINS[DShot::ESC_COUNT] = {Hardware::MOTOR_FL_PIN, Hardware::MOTOR_FR_PIN, Hardware::MOTOR_RL_PIN, Hardware::MOTOR_RR_PIN};
     ESC::init(ESC_PINS);

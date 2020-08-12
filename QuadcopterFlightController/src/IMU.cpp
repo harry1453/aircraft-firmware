@@ -89,9 +89,9 @@ namespace IMU {
             imu1.dmpGetGravity(&gravity, &q);
             imu1.dmpGetYawPitchRoll(ypr, &q, &gravity);
             if (/*TODO pitchRollInverted*/ true) {
-                attitude.pitch = ypr[2] * 180/M_PI /* todo configurable */ * -1;
-                attitude.yaw = ypr[0] * 180/M_PI;
-                attitude.roll = ypr[1] * 180/M_PI /* todo configurable */ * -1;
+                attitude.pitch = ypr[2] /* todo configurable */ * -1;
+                attitude.yaw = ypr[0];
+                attitude.roll = ypr[1] /* todo configurable */ * -1;
             } else {
                 attitude.pitch = ypr[1] * 180/M_PI;
                 attitude.yaw = ypr[0] * 180/M_PI;

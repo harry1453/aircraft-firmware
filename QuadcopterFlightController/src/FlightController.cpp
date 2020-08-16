@@ -61,10 +61,6 @@ namespace FlightController {
         rollInput = IMU::attitude.roll;
         rollPid.Compute();
 
-        Radio::aircraftStatus.millis = millis();
-        Radio::aircraftStatus.error = pitchSetpoint - pitchInput;
-        Radio::aircraftStatus.output = pitchOutput;
-
         if (Radio::controls.throttle == 0) {
             ESC::setThrottle(ESC::FL, 0);
             ESC::setThrottle(ESC::FR, 0);

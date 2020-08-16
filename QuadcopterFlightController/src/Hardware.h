@@ -6,7 +6,7 @@
 
 namespace Hardware {
     // Flight parameters
-    const double MAX_ANGLE = 30.0 / 180.0 * PI;
+    const double MAX_ANGLE = 40.0 / 180.0 * PI;
 
     // PID parameters - these are betaflight's defaults
 //    const double PitchKp = 50;

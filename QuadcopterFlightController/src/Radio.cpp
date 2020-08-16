@@ -40,8 +40,8 @@ namespace Radio {
     }
 
     void loop() {
-//        aircraftStatus.goodSignal = radio.testRPD();
-//        aircraftStatus.battery = analogRead(Hardware::BATTERY_INPUT_PIN);
+        aircraftStatus.goodSignal = radio.testRPD();
+        aircraftStatus.battery = analogRead(Hardware::BATTERY_INPUT_PIN);
         tryReceiveControls();
     }
 }

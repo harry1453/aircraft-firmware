@@ -12,11 +12,8 @@ namespace Radio {
     };
 
     struct AircraftStatus {
-//        uint16_t battery;
-//        bool goodSignal;
-        unsigned long millis;
-        double error;
-        double output;
+        uint16_t battery;
+        bool goodSignal;
     };
 
     extern AircraftStatus aircraftStatus;

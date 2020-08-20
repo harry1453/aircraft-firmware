@@ -5,6 +5,8 @@
 #include "DShot.h"
 
 namespace ESC {
+    const uint16_t MAX_THROTTLE = 2000;
+
     /**
      * @param pins The pins attached to each motor in order: FL, FR, RL, RR
      */

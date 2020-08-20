@@ -15,7 +15,6 @@ namespace Radio {
             radio.writeAckPayload(1, &aircraftStatus, sizeof(AircraftStatus));
             if (radio.available()) {
                 radio.read(&controls, sizeof(ControlsStatus));
-//                controls.throttle *= 3;
                 lastReceived = millis();
             }
             if (millis() - lastReceived >= 1000) {

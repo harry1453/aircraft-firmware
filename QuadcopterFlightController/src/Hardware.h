@@ -6,7 +6,7 @@
 
 namespace Hardware {
     // Flight parameters
-    const double MAX_ANGLE = 40.0 / 180.0 * PI;
+    const double MAX_ANGLE = 35.0 / 180.0 * PI;
 
     // PID parameters - these are betaflight's defaults
 //    const double PitchKp = 50;
@@ -21,18 +21,18 @@ namespace Hardware {
 //    const double RollKi = 45;
 //    const double RollKd = 25;
 //    const double RollRange = 100;
-    const double PitchKp = 110;
-    const double PitchKi = 25;
-    const double PitchKd = 25;
-    const double PitchRange = 250;
-    const double YawKp = 100;
-    const double YawKi = 100;
-    const double YawKd = 50;
+    const double PitchKp = 105;
+    const double PitchKi = 30;
+    const double PitchKd = 16;
+    const double PitchRange = 200;
+    const double YawKp = 105;
+    const double YawKi = 30;
+    const double YawKd = 16;
     const double YawRange = 100;
-    const double RollKp = 110;
-    const double RollKi = 25;
-    const double RollKd = 25;
-    const double RollRange = 250;
+    const double RollKp = 105;
+    const double RollKi = 30;
+    const double RollKd = 16;
+    const double RollRange = 200;
 
     const uint8_t MOTOR_FL_PIN = 5;
     const uint8_t MOTOR_FR_PIN = 6;

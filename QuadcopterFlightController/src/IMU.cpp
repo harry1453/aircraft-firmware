@@ -53,18 +53,18 @@ namespace IMU {
         imu2.setXGyroOffset(37);
         imu2.setYGyroOffset(29);
         imu2.setZGyroOffset(11);
+
+        imu1.CalibrateAccel(5);
+        imu1.CalibrateGyro(5);
         if (devStatus != 0) {
             Serial.println("Could not initialize IMU2 (Error code " + String(devStatus));
             return;
         }
-
-        imu1.CalibrateAccel(5);
-        imu1.CalibrateGyro(5);
-        imu1.PrintActiveOffsets();
-
+//        imu1.PrintActiveOffsets();
+//
         imu2.CalibrateAccel(5);
         imu2.CalibrateGyro(5);
-        imu2.PrintActiveOffsets();
+//        imu2.PrintActiveOffsets();
 
         imu1.setDMPEnabled(true);
         imu2.setDMPEnabled(true);

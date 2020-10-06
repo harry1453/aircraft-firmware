@@ -1,3 +1,0 @@
-[submodule "QuadcopterFlightController/lib/DShot-Arduino"]
-	path = QuadcopterFlightController/lib/DShot-Arduino
-	url = https://github.com/gueei/DShot-Arduino.git

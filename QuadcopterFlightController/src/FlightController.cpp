@@ -5,7 +5,6 @@
 #include "ESC.h"
 #include "IMU.h"
 #include "Radio.h"
-#include "Mixer.h"
 
 namespace FlightController {
     namespace { // private
